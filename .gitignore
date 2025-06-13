@@ -1,0 +1,20 @@
+# Python derlenmiş dosyalar
+__pycache__/
+*.pyc
+
+# Sanal ortam
+venv/
+.env
+
+# İşletim sistemi dosyaları
+.DS_Store
+
+# IDE dosyaları (eğer varsa)
+*.vscode/
+*.idea/
+
+# Log dosyaları
+*.log
+
+# Geçici dosyalar
+*.tmp
