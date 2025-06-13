@@ -2,7 +2,7 @@
 
 Bu repository, NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) performansını karşılaştırmak için geliştirilen bir laboratuvar ödevi projesini içerir. Proje, Docker konteynerleri kullanılarak kurulan veritabanlarıyla bir FastAPI uygulaması aracılığıyla test edilmiş ve Siege ile yük testi, PowerShell script’leriyle zaman testi yapılmıştır.
 
----
+
 
 ## 📖 İçindekiler
 - [Proje Amacı](#proje-amaci)
@@ -13,13 +13,13 @@ Bu repository, NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) performansı
 - [Karşılaşılan Zorluklar ve Çözümler](#karsilasilan-zorluklar-ve-cozumler)
 - [Tartışma](#tartisma)
 
----
+
 
 ## 📌 Proje Amacı
 
 Bu ödevin amacı, farklı NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) performansını ölçmek ve karşılaştırmaktır. Performans, 1000 istekle yük testi (Siege) ve 100 istekle zaman testi (PowerShell script’leri) kullanılarak değerlendirilmiştir. Proje, veritabanlarının okuma/yazma hızlarını ve eşzamanlı işlem kapasitelerini analiz etmeyi hedefler.
 
----
+
 
 ## ⚙️ Kurulum
 
@@ -53,7 +53,7 @@ Bu ödevin amacı, farklı NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) 
     ```bash
     uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 
----
+
 
 ## 🗂️ Proje Yapısı
 
@@ -90,7 +90,7 @@ Bu ödevin amacı, farklı NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) 
     ├── requirements.txt                    # Python bağımlılıkları
     └── README.md
 
----
+
 
 ## 🧪 Test Süreçleri
 
@@ -102,7 +102,7 @@ Bu ödevin amacı, farklı NoSQL veritabanlarının (Redis, Hazelcast, MongoDB) 
     ```bash
     docker run --rm -v ${PWD}:/results local/siege -H "Accept: application/json" -c10 -r100 "http://<IP_ADRESI>:8080/nosql-lab-<db>/ogrenci_no=2025000001" > <db>-siege.results
 
----
+
 
 ## Test Sonuçları
 
@@ -118,7 +118,7 @@ Aşağıdaki tablo, test sonuçlarını özetler:
 *   **Hazelcast**: Redis’e yakın performans, dengeli sonuçlar.
 *   **MongoDB**: Diğerlerinden çok daha yavaş, Elapsed Time ve Longest Transaction (15.86 sn) değerleri anormal.
 
----
+
 
 ## Karşılaşılan Zorluklar ve Çözümler
 
@@ -138,7 +138,7 @@ Aşağıdaki tablo, test sonuçlarını özetler:
 *   **Sorun**: `-Parallel` parametresinin PowerShell 5.1’de desteklenmemesi.
 *   **Çözüm**: Script paralel olmadan çalıştırıldı, sonuçlar yine de alındı.
 
----
+
 
 ## 💬 Tartışma
 
@@ -156,4 +156,3 @@ Aşağıdaki tablo, test sonuçlarını özetler:
 - MongoDB konteyner yapılandırmasını optimize etme.
 - Yazma işlemleri gibi ek test senaryoları ile kapsamlı analiz.
 
----
